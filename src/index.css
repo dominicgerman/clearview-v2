@@ -58,6 +58,10 @@
     padding-bottom: 4px;
     background-clip: padding-box;
   }
+
+  #modal::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+  }
 }
 /* DON'T USE IMPORT STATEMENT IF USING WP */
 /* @import url('https://fonts.googleapis.com/css2?family=Forum&family=Rubik:wght@400;500&display=swap'); */
