@@ -20,8 +20,12 @@
     text-underline-offset: 8px;
   }
 
-  .clip-path__contact {
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  .background-clip__team {
+    background: linear-gradient(
+      172deg,
+      #fff 0 65%,
+      rgba(86, 126, 168, 0.1) 65% 100%
+    );
   }
 
   .background__clip {
