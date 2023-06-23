@@ -199,15 +199,42 @@
       <!-- CONTACT -->
       <section>
         <div class="bg-lighterBlue">
-          <div class="max-w-2xl px-6 lg:px-0 pb-8 mx-auto contact-form__button">
+          <div
+            class="max-w-[620px] px-6 lg:px-0 pb-36 mx-auto contact-form__button"
+          >
             <h3 class="text-4xl font-forum mb-8">Contact Us</h3>
             <span
               >Looking to get in touch? We would love to hear from you.</span
             >
-            <div class="h-80">
-              <!-- ---------- CONTACT FORM GOES HERE ----------- -->
-              <!-- ---------- CONTACT FORM GOES HERE ----------- -->
-              <!-- ---------- CONTACT FORM GOES HERE ----------- -->
+            <div class="flex flex-col lg:flex-row gap-5 py-12">
+              <input
+                type="text"
+                class="border border-lightBlue h-12 w-full px-4"
+                name=""
+                id=""
+                placeholder="First and last name"
+              />
+              <input
+                type="email"
+                class="border border-lightBlue h-12 w-full px-4"
+                name=""
+                id=""
+                placeholder="Email"
+              />
+            </div>
+            <div class="flex flex-col gap-12 items-end">
+              <textarea
+                class="w-full p-4 border border-lightBlue"
+                name="message"
+                id="contact-message"
+                rows="6"
+                placeholder="Your message here..."
+              ></textarea>
+              <button
+                class="w-[200px] h-[50px] bg-lightBlue rounded-full text-white block"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>
