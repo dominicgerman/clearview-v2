@@ -3,7 +3,7 @@
 const charlie = document.querySelector('#charlie')
 const david = document.querySelector('#david')
 const scottie = document.querySelector('#scottie')
-const crystal = document.querySelector('#crystal')
+const bethany = document.querySelector('#bethany')
 const board = document.querySelector('#board')
 
 const modal = document.querySelector('#modal')
@@ -31,24 +31,7 @@ const bios = {
     Cailin since 2012. They have three kids: Beckham, Anderson, and
     Elodie. They enjoy watching movies and being outdoors. Scottie has a
     passion for youth and young adult ministry.`,
-  crystal: `Crystal was born and raised in LaGrange and will always consider it
-    her home. She has been a Christian since the age of 5 and has felt a
-    strong inclination towards Children’s Ministry since she was 13. She
-    graduated from Point University in West Point, GA, in 2015,
-    obtaining a bachelor’s degree in Child and Youth Development with a
-    minor in Biblical Studies. Crystal has been married to William House
-    III (Willie) since 2011. Willie works as a superintendent in
-    construction. In July 2019, they were blessed with the adoption of a
-    little girl named Layna Grace. They were overjoyed and officially
-    welcomed her as a House family member in October 2019. Additionally,
-    they have 3 dogs, 1 cat, and 4 chickens. Both Crystal and Willie
-    share a love for outdoor activities and travel whenever possible.
-    Crystal’s hobbies include baking, singing (although she doesn’t do
-    solos), and engaging in various activities with children. She
-    possesses a deep passion for nurturing children’s knowledge of their
-    Savior and aims to teach them the Bible in fun and exciting ways.
-    Crystal firmly believes that this calling is from God and eagerly
-    follows Him.`,
+  bethany: `Bethany was born and raised in Atlanta, GA. She graduated from Southeastern University in 2007 with a bachelor's degree in English and Intercultural Studies. For 10 years, Bethany worked in foreign missions as a Christian educator, ESL teacher and missions staff in Russia, Israel and Panama. She has also worked as a Children's director at a church in Alabama for two years. Bethany has been married to her husband Corey since 2012 and has two children, Anne and Ben. She is also a part-time teacher at Lafayette Christian School in Lagrange. Bethany’s heart is to see the children of this world find their hope and purpose in Jesus. She believes educating and empowering the next generation with the Gospel will change the world.`,
   david: `David grew up in Northeast Ohio where he spent years cultivating and nurturing his life-long passion for worship ministry. Eventually, this led to worship ministry positions spanning from camp ministry to bible college training to leading worship at both small and large multi-site megachurches. David is also the Paul S. and Jean R. Amos
     Distinguished Chair in Music and Director of Choral Activities at the Schwob School of Music at Columbus State University where he conducts the Schwob Singers, Choral Union, and teaches courses in voice and conducting. David holds the Doctor of Musical Arts degree
     in conducting from the University of Michigan, the Master of Music degree in conducting from the Eastman School of Music, and the Bachelor of Music degree in sacred music (vocal performance emphasis) from the Moody Bible Institute in Chicago, IL. David resides in Columbus, GA and is an avid coffee connoisseur, world traveler, and culinary arts champion.`,
@@ -83,10 +66,10 @@ scottie.addEventListener('click', () => {
   bioParagraph.innerHTML = bios.scottie
   modal.showModal()
 })
-crystal.addEventListener('click', () => {
-  fullName.innerHTML = crystal.querySelector('h3').innerHTML
-  position.innerHTML = crystal.querySelector('h4').innerHTML
-  bioParagraph.innerHTML = bios.crystal
+bethany.addEventListener('click', () => {
+  fullName.innerHTML = bethany.querySelector('h3').innerHTML
+  position.innerHTML = bethany.querySelector('h4').innerHTML
+  bioParagraph.innerHTML = bios.bethany
   modal.showModal()
 })
 david.addEventListener('click', () => {
