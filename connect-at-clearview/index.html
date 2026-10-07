@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/logo.png" />
+    <title>Clearview Chapel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/build/index.css" />
+    <script defer src="/src/connect.js"></script>
+  </head>
+
+  <body class="overflow-x-hidden bg-white font-rubik">
+    <!-- HEADER -->
+    <div class="shadow-sm w-screen">
+      <div
+        class="relative flex items-center h-16 lg:h-20 justify-between bg-white lg:max-w-[1280px] lg:px-10 mx-auto"
+      >
+        <a href="/">
+          <div class="flex items-center gap-2 lg:gap-4 pl-4 lg:pl-0">
+            <img
+              src="/images/logo.png"
+              alt="Clearview Chapel logo"
+              class="h-10 w-10 lg:h-14 lg:w-14"
+            />
+            <img
+              src="/images/title.png"
+              alt="Clearview Chapel logo"
+              class="h-8 w-36 lg:h-14 lg:w-60"
+            />
+          </div>
+        </a>
+        <input
+          type="checkbox"
+          class="opacity-0 peer absolute right-4 h-10 w-10 lg:hidden z-50"
+        />
+        <svg
+          class="peer-checked:hidden absolute right-4 z-40 lg:hidden"
+          width="40"
+          height="16"
+          viewBox="0 0 40 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="40" height="2" fill="black" />
+          <rect y="7" width="40" height="2" fill="black" />
+          <rect y="14" width="40" height="2" fill="black" />
+        </svg>
+        <svg
+          class="hidden peer-checked:block peer-checked:fixed right-4 z-40 lg:hidden"
+          width="40"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="0.443848"
+            y="30.1421"
+            width="42"
+            height="2"
+            transform="rotate(-45 0.443848 30.1421)"
+            fill="black"
+          />
+          <rect
+            x="1.85791"
+            y="0.443604"
+            width="42"
+            height="2"
+            transform="rotate(45 1.85791 0.443604)"
+            fill="black"
+          />
+        </svg>
+        <nav
+          class="hidden peer-checked:flex flex-col items-center justify-center gap-16 fixed top-0 left-1/2 -translate-x-1/2 text-2xl bg-white h-screen w-screen z-30 lg:flex lg:flex-row lg:static lg:text-lg lg:gap-12 lg:bg-opacity-0 lg:h-auto lg:w-auto lg:translate-x-0"
+        >
+          <a href="/first-time-visitors" class="">I'm new</a>
+          <a href="/team" class="">Team</a>
+          <a href="/ministries" class="">Ministries</a>
+          <a href="/support">
+            <button class="bg-lightBlue text-white px-8 py-2 rounded-full">
+              Give
+            </button>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="background__clip">
+      <h1 class="text-6xl py-20 text-center">Connect at Clearview</h1>
+      <div
+        class="flex flex-col lg:flex-row items-center gap-9 justify-center pb-52 max-w-[1080px] mx-6 lg:mx-auto"
+      >
+        <article
+          class="flex flex-col items-center max-w-[335px] h-[400px] p-8 bg-white card-box-shadow rounded-sm relative border-2 border-lightBlue"
+        >
+          <h3 class="text-3xl py-8">Connect</h3>
+          <p class="text-xl text-center mb-10">
+            We would love to get to know you better and help you find your place in the Clearview community.
+          </p>
+          <button
+            type="button"
+            id="connect-open"
+            class="mx-auto text-white rounded-full bg-lightBlue w-52 h-14">
+            Get Started
+        </button>
+        </article>
+        <article
+          class="flex flex-col items-center max-w-[335px] h-[400px] p-8 bg-white card-box-shadow rounded-sm relative border-2 border-lightBlue"
+        >
+          <h3 class="text-3xl py-8">Give</h3>
+          <p class="text-xl text-center mb-10">
+            You can now support us online! Give any amount using our secure online giving portal.
+          </p>
+          <a
+            href="https://tithe.ly/give?c=7477076"
+            class="mx-auto inline-block"
+          >
+            <button class="text-white rounded-full bg-lightBlue w-52 h-14">
+              Give Online
+            </button>
+          </a>
+        </article>
+      </div>
+      <!-- CONNECT MODAL -->
+      <dialog
+        id="connect-modal"
+        aria-labelledby="connect-title"
+        class="w-[calc(100%-1.25rem)] max-w-xl p-0 border border-lightBlue rounded-sm backdrop:bg-black/30"
+      >
+        <div class="px-6 py-10 sm:px-12 font-rubik">
+          <h2 id="connect-title" class="text-4xl text-center mb-10">
+            Connect at Clearview
+          </h2>
+
+          <!-- Form -->
+          <form id="connect-form" class="flex flex-col gap-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="First and last name"
+              autocomplete="name"
+              required
+              class="w-full border border-lightBlue rounded-sm px-6 py-4 text-lg placeholder:text-darkGrey"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Mobile number"
+              autocomplete="tel"
+              required
+              class="w-full border border-lightBlue rounded-sm px-6 py-4 text-lg placeholder:text-darkGrey"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email (optional)"
+              autocomplete="email"
+              class="w-full border border-lightBlue rounded-sm px-6 py-4 text-lg placeholder:text-darkGrey"
+            />
+
+            <fieldset class="mt-4">
+              <legend class="text-lg mb-4">
+                How can we help you take your next step at Clearview?
+              </legend>
+
+              <div class="flex flex-col gap-4 pl-6">
+                <label class="flex items-start gap-3 text-lg">
+                  <input type="checkbox" name="next_steps" value="I'm new here" class="mt-1.5 h-5 w-5 shrink-0 accent-lightBlue" />
+                  I’m new here
+                </label>
+                <label class="flex items-start gap-3 text-lg">
+                  <input type="checkbox" name="next_steps" value="I'd like to follow Jesus" class="mt-1.5 h-5 w-5 shrink-0 accent-lightBlue" />
+                  I’d like to follow Jesus
+                </label>
+                <label class="flex items-start gap-3 text-lg">
+                  <input type="checkbox" name="next_steps" value="I'm interested in baptism" class="mt-1.5 h-5 w-5 shrink-0 accent-lightBlue" />
+                  I’m interested in baptism
+                </label>
+                <label class="flex items-start gap-3 text-lg">
+                  <input type="checkbox" name="next_steps" value="I'd like to learn more about following Jesus" class="mt-1.5 h-5 w-5 shrink-0 accent-lightBlue" />
+                  I’d like to learn more about following Jesus
+                </label>
+                <label class="flex items-start gap-3 text-lg">
+                  <input type="checkbox" name="next_steps" value="I'd like to join a group or class" class="mt-1.5 h-5 w-5 shrink-0 accent-lightBlue" />
+                  I’d like to join a group or class
+                </label>
+
+                <div>
+                  <label class="flex items-start gap-3 text-lg">
+                    <input type="checkbox" name="next_steps" value="I have a prayer request" data-details="prayer-details" class="mt-1.5 h-5 w-5 shrink-0 accent-lightBlue" />
+                    I have a prayer request
+                  </label>
+                  <textarea
+                    id="prayer-details"
+                    name="prayer_request_details"
+                    rows="4"
+                    placeholder="Provide more details..."
+                    class="hidden mt-4 w-full border border-lightBlue rounded-sm px-6 py-4 text-lg placeholder:text-darkGrey"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label class="flex items-start gap-3 text-lg">
+                    <input type="checkbox" name="next_steps" value="Something else" data-details="other-details" class="mt-1.5 h-5 w-5 shrink-0 accent-lightBlue" />
+                    Something else
+                  </label>
+                  <textarea
+                    id="other-details"
+                    name="something_else_details"
+                    rows="4"
+                    placeholder="Provide more details..."
+                    class="hidden mt-4 w-full border border-lightBlue rounded-sm px-6 py-4 text-lg placeholder:text-darkGrey"
+                  ></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <p id="connect-error" class="hidden text-orange text-center">
+              Something went wrong. Please try again.
+            </p>
+
+            <button
+              type="submit"
+              id="connect-submit"
+              class="self-center mt-6 text-white text-lg rounded-full bg-lightBlue w-full max-w-[272px] h-14 disabled:opacity-60"
+            >
+              Submit
+            </button>
+          </form>
+
+          <!-- Thank-you message (shown after submitting) -->
+          <div id="connect-thanks" class="hidden text-center">
+            <p class="text-lg mb-8">
+              Thanks for connecting with us! We're glad you're here.
+            </p>
+            <p class="text-lg mb-14">
+              Someone from Clearview will follow up with you soon. YOU ARE LOVED.
+            </p>
+            <button
+              type="button"
+              id="connect-close"
+              class="text-white text-lg rounded-full bg-lightBlue w-full max-w-[272px] h-14"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-screen bg-darkGrey">
+      <div
+        class="min-h-[366px] w-full bg-darkGrey lg:max-w-[1280px] px-10 py-16 lg:p-0 lg:py-14 lg:px-24 mx-auto"
+      >
+        <div
+          class="flex flex-col gap-12 lg:grid lg:grid-cols-footer mb-10 text-white"
+        >
+          <img
+            src="/images/logo.png"
+            alt="Clearview chapel logo"
+            class="h-12 w-12 lg:h-20 lg:w-20"
+          />
+          <div class="flex flex-col font-forum text-lg gap-5">
+            <p>
+              <a href="https://tithe.ly/give?c=7477076" target="_blank"
+                >Give online</a
+              >
+            </p>
+            <p>
+              <a href="/first-time-visitors">About Us</a>
+            </p>
+            <p>
+              <a
+                href="https://www.facebook.com/clearviewchapel/live_videos"
+                target="_blank"
+                >Livestream</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://members.instantchurchdirectory.com/"
+                target="_blank"
+                >Church Directory</a
+              >
+            </p>
+          </div>
+          <div class="flex items-start gap-4 lg:justify-end">
+            <a href="https://www.facebook.com/clearviewchapel/" target="_blank">
+              <img
+                src="/images/facebook.png"
+                alt="Visit our Facebook page"
+                height="29.2px"
+                width="16.3px"
+              />
+            </a>
+            <a href="https://www.instagram.com/clearviewchapel" target="_blank">
+              <img
+                src="/images/instagram.png"
+                alt="Visit our Instagram page"
+                height="29.2px"
+                width="29.2px"
+              />
+            </a>
+          </div>
+        </div>
+        <p class="text-white text-center text-xs font-normal">
+          2101 S Davis Rd, LaGrange, GA, 30241 | &copy; 2023 Clearview Chapel
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
